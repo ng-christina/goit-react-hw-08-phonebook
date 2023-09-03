@@ -1,0 +1,10 @@
+.conList {
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px 10px 10px;
+}
+.p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+}
