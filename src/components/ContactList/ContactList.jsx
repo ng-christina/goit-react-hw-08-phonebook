@@ -5,10 +5,10 @@ import Loader from 'components/Loader/Loader';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 
-import { selectFilter, selectError, selectIsLoading } from 'redux/selector';
+import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 
 const ContactList = () => {
-  const filteredContacts = useSelector(selectFilter);
+  const contacts = useSelector(selectContacts);
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
@@ -21,11 +21,9 @@ const ContactList = () => {
     <div>
       {isLoading && !error ? (
         <Loader />
-      ) : filteredContacts.length === 0 && !error ? (
-        <p className={style.p}>Add your first number in phonebook</p>
       ) : (
         <ul className={style.conList}>
-          {filteredContacts.map(({ id, name, number }) => (
+          {contacts.map(({ id, name, number }) => (
             <ContactItem key={id} contact={{ id, name, number }} />
           ))}
         </ul>

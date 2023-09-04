@@ -1,22 +1,19 @@
 import style from './filter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { filterReducer } from 'redux/filterSlice';
-import { selectContacts, selectFilter } from 'redux/selector';
+import { filterAction } from 'redux/filterSlice';
+import { selectContacts, selectFilter } from 'redux/selectors';
 
 const Filter = () => {
-  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
 
   const onChange = e => {
-    const value = e.target.value.trim();
-    dispatch(filterReducer(value));
+    dispatch(filterAction(e.target.value.trim()));
   };
-
-  const contactsLength = useSelector(selectContacts).length;
 
   return (
     <div className={style.searchContainer}>
-      {contactsLength < 1 ? (
+      {useSelector(selectContacts).length < 1 ? (
         <p className={style.p}>Add your first number in phonebook</p>
       ) : (
         <label className={style.search}>
@@ -26,8 +23,8 @@ const Filter = () => {
             placeholder="Search"
             className={style.inputName}
             title="Enter search name"
-            onChange={onChange}
             value={filter}
+            onChange={onChange}
           />
         </label>
       )}
