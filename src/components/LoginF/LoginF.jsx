@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/auth/authOperations';
 import { useState } from 'react';
+import style from './LoginF.module.css';
+import { IoEnterOutline } from 'react-icons/io5';
 
 const LoginF = () => {
   const [formData, setFormData] = useState({
@@ -24,9 +26,8 @@ const LoginF = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">Email</label>
+    <form className={style.formReg} onSubmit={handleSubmit}>
+      <div className={style.div}>
         <input
           type="email"
           id="email"
@@ -34,11 +35,13 @@ const LoginF = () => {
           value={formData.email}
           onChange={handleChange}
           required
-        />
+          className={style.input}
+        />{' '}
+        <label className={style.label} htmlFor="email">
+          Email
+        </label>
       </div>
-
-      <div>
-        <label htmlFor="password">Password</label>
+      <div className={style.div}>
         <input
           type="password"
           id="password"
@@ -46,27 +49,17 @@ const LoginF = () => {
           value={formData.password}
           onChange={handleChange}
           required
+          className={style.input}
         />
-      </div>
-
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="remember"
-            checked={formData.remember}
-            onChange={handleChange}
-          />
-          Remember me
+        <label className={style.label} htmlFor="password">
+          Password
         </label>
       </div>
-
       <div>
-        <button type="submit" disabled={isLoading}>
-          Log in
+        <button className={style.button} type="submit" disabled={isLoading}>
+          Log in <IoEnterOutline className={style.svg} />
         </button>
       </div>
-
       {error && <p>{error}</p>}
     </form>
   );

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import style from '../ContactPage/Contact.module.css';
+import Animation from '../../img/giphy.gif';
+import style from './home.module.css';
+import { GoBook } from 'react-icons/go';
 
 const Home = () => {
   useEffect(() => {
@@ -7,8 +9,17 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1 className={style.title}>Phonebook</h1>
+    <div className={style.div}>
+      <h1 className={style.title}>
+        Phonebook{' '}
+        <span>
+          <GoBook />
+        </span>
+      </h1>
+      <h3 className={style.h}>
+        Forget About Notes and Stress. We'll Find Them All for You!
+      </h3>
+      <img alt="animation" width="40%" srcSet={Animation} />
     </div>
   );
 };

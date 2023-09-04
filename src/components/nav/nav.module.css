@@ -1,6 +1,6 @@
 .nuv {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 .link {
   font-weight: 500;
@@ -14,6 +14,9 @@
 
 .nuv :focus,
 .nuv :hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
   transition: all 1s ease;
+}
+.icon {
+  margin-left: 5px;
 }

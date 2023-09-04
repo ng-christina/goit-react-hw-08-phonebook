@@ -1,6 +1,7 @@
 import React from 'react';
 import FormRegister from 'components/FormRegist/FormRegist';
-import style from '../ContactPage/Contact.module.css';
+import style from './reg.module.css';
+import { IoPersonAddOutline } from 'react-icons/io5';
 
 const Register = () => {
   React.useEffect(() => {
@@ -9,7 +10,9 @@ const Register = () => {
 
   return (
     <div>
-      <h1 className={style.title}>Registration</h1>
+      <h1 className={style.title}>
+        Registration <IoPersonAddOutline />
+      </h1>
       <FormRegister />
     </div>
   );

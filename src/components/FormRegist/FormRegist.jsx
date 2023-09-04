@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
 import { useState } from 'react';
+import style from './form.module.css';
+import { FcApproval } from 'react-icons/fc';
 
 const FormRegister = () => {
   const [formData, setFormData] = useState({
@@ -29,9 +31,8 @@ const FormRegister = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">E-mail</label>
+    <form className={style.formReg} onSubmit={handleSubmit}>
+      <div className={style.div}>
         <input
           type="email"
           id="email"
@@ -39,11 +40,13 @@ const FormRegister = () => {
           value={formData.email}
           onChange={handleChange}
           required
+          className={style.input}
         />
+        <label className={style.label} htmlFor="email">
+          E-mail
+        </label>
       </div>
-
-      <div>
-        <label htmlFor="password">Password</label>
+      <div className={style.div}>
         <input
           type="password"
           id="password"
@@ -52,11 +55,13 @@ const FormRegister = () => {
           onChange={handleChange}
           autoComplete="new-password"
           required
-        />
+          className={style.input}
+        />{' '}
+        <label className={style.label} htmlFor="password">
+          Password
+        </label>
       </div>
-
-      <div>
-        <label htmlFor="confirm">Confirm Password</label>
+      <div className={style.div}>
         <input
           type="password"
           id="confirm"
@@ -65,11 +70,13 @@ const FormRegister = () => {
           onChange={handleChange}
           autoComplete="new-password"
           required
+          className={style.input}
         />
+        <label className={style.label} htmlFor="confirm">
+          Confirm Password
+        </label>
       </div>
-
-      <div>
-        <label htmlFor="name">Name</label>
+      <div className={style.div}>
         <input
           type="text"
           id="name"
@@ -77,15 +84,17 @@ const FormRegister = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          className={style.input}
         />
+        <label className={style.label} htmlFor="name">
+          Name
+        </label>
       </div>
-
       <div>
-        <button type="submit" disabled={isLoading}>
-          Register
+        <button className={style.button} type="submit" disabled={isLoading}>
+          Register <FcApproval className={style.svg} />
         </button>
       </div>
-
       {error && <p>{error}</p>}
     </form>
   );

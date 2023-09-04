@@ -1,0 +1,75 @@
+.formReg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 25px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: 30px auto;
+}
+
+.div {
+  position: relative;
+}
+
+.input {
+  padding: 10px;
+  width: 270px;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
+  color: #000000;
+  background-color: transparent;
+  outline: 2px solid #fff;
+  transition: outline-color 0.3s ease;
+}
+
+.label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transform: translate(0, 0);
+  transform-origin: left;
+  transition: transform 0.3s, font-size 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.input:focus + .label,
+.input:valid + .label {
+  transform: translateY(-30px);
+  font-size: 12px;
+  color: #333; /* Змініть колір на потрібний */
+}
+
+.input:focus {
+  outline-color: #fead83;
+}
+
+.button {
+  font-size: 15px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+  background: transparent;
+  color: rgb(62, 55, 62);
+  border: 3px solid #fbcf88;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  border-radius: 40px;
+}
+
+.button:hover {
+  background-image: linear-gradient(to left, #ff9263cc, #ffdd8c);
+  border-color: rgb(250, 170, 50);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.svg {
+  width: 18px;
+  height: 18px;
+}
