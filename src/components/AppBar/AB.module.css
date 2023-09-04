@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  background: rgb(241, 194, 140);
+  margin: 32px auto 30px;
+  padding: 16px 32px;
+  border-radius: 6px;
+  box-shadow: rgb(237 113 52 / 60%) 0px 0px 14px 7px;
+}

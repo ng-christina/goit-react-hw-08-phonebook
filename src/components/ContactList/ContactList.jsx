@@ -5,10 +5,15 @@ import Loader from 'components/Loader/Loader';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
+import {
+  selectFilter,
+  selectError,
+  selectIsLoading,
+  selectContactsFiltered,
+} from 'redux/selectors';
 
 const ContactList = () => {
-  const contacts = useSelector(selectContacts);
+  const filteredContacts = useSelector(selectContactsFiltered); // Зміни цей рядок
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
@@ -23,7 +28,7 @@ const ContactList = () => {
         <Loader />
       ) : (
         <ul className={style.conList}>
-          {contacts.map(({ id, name, number }) => (
+          {filteredContacts.map(({ id, name, number }) => (
             <ContactItem key={id} contact={{ id, name, number }} />
           ))}
         </ul>

@@ -1,0 +1,19 @@
+.nuv {
+  display: flex;
+  gap: 50px;
+}
+.link {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--primary-text-color-ligth);
+  text-transform: uppercase;
+}
+
+.nuv :focus,
+.nuv :hover {
+  transform: scale(1.3);
+  transition: all 1s ease;
+}
