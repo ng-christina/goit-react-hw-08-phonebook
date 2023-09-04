@@ -16,7 +16,7 @@ const Filter = () => {
       {useSelector(selectContacts).length < 1 ? (
         <p className={style.p}>Add your first number in phonebook</p>
       ) : (
-        <label className={style.search}>
+        <div className={style.div}>
           <input
             type="text"
             name="filter"
@@ -26,7 +26,8 @@ const Filter = () => {
             value={filter}
             onChange={onChange}
           />
-        </label>
+          <label className={style.search}> </label>
+        </div>
       )}
     </div>
   );

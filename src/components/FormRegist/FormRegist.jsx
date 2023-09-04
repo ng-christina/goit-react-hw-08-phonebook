@@ -32,6 +32,7 @@ const FormRegister = () => {
 
   return (
     <form className={style.formReg} onSubmit={handleSubmit}>
+
       <div className={style.div}>
         <input
           type="email"
@@ -46,6 +47,7 @@ const FormRegister = () => {
           E-mail
         </label>
       </div>
+
       <div className={style.div}>
         <input
           type="password"
@@ -61,6 +63,7 @@ const FormRegister = () => {
           Password
         </label>
       </div>
+
       <div className={style.div}>
         <input
           type="password"
@@ -76,6 +79,7 @@ const FormRegister = () => {
           Confirm Password
         </label>
       </div>
+
       <div className={style.div}>
         <input
           type="text"
@@ -90,12 +94,14 @@ const FormRegister = () => {
           Name
         </label>
       </div>
+
       <div>
         <button className={style.button} type="submit" disabled={isLoading}>
           Register <FcApproval className={style.svg} />
         </button>
       </div>
       {error && <p>{error}</p>}
+      
     </form>
   );
 };

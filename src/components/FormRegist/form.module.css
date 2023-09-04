@@ -8,7 +8,6 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 300px;
-  margin: 30px auto;
 }
 
 .div {
@@ -41,7 +40,7 @@
 .input:valid + .label {
   transform: translateY(-30px);
   font-size: 12px;
-  color: #333; /* Змініть колір на потрібний */
+  color: #333;
 }
 
 .input:focus {

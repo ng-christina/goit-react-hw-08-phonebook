@@ -27,6 +27,7 @@ const LoginF = () => {
 
   return (
     <form className={style.formReg} onSubmit={handleSubmit}>
+
       <div className={style.div}>
         <input
           type="email"
@@ -41,6 +42,7 @@ const LoginF = () => {
           Email
         </label>
       </div>
+
       <div className={style.div}>
         <input
           type="password"
@@ -55,12 +57,14 @@ const LoginF = () => {
           Password
         </label>
       </div>
+
       <div>
         <button className={style.button} type="submit" disabled={isLoading}>
           Log in <IoEnterOutline className={style.svg} />
         </button>
       </div>
       {error && <p>{error}</p>}
+      
     </form>
   );
 };

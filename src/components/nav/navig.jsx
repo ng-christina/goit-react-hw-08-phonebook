@@ -1,6 +1,6 @@
 import { useAuth } from '../hooks';
 import { NavLink } from 'react-router-dom';
-import { FcLike, FcMultipleSmartphones } from 'react-icons/fc';
+import { FcLike } from 'react-icons/fc';
 import style from './nav.module.css';
 
 const Navigation = () => {
@@ -17,9 +17,6 @@ const Navigation = () => {
       {isLoggedIn && (
         <NavLink className={style.link} to="/contacts">
           Phonebook
-          <span className={style.icon}>
-            <FcMultipleSmartphones />
-          </span>
         </NavLink>
       )}
     </nav>

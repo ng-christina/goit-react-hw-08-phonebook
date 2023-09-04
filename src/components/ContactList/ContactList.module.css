@@ -2,6 +2,18 @@
   width: 320px;
   margin: 0 auto;
   padding: 20px 10px 10px;
+  animation: fadeIn 1.4s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .p {
   font-size: 20px;

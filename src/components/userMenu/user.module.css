@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+.container :hover {
+  transform: scale(1.1);
+  transition: all 1s ease;
+}
+
+.title {
+  font-size: 21px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}

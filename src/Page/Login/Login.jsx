@@ -8,7 +8,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div>
+    <div className={style.div}>
       <h1 className={style.title}>Login</h1>
       <LoginF />
     </div>

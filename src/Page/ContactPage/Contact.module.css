@@ -1,4 +1,25 @@
 .title {
   text-align: center;
   margin-bottom: 10px;
+  animation: fadeIn 0.9s ease;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 105px auto 0;
+  animation: fadeIn 0.9s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

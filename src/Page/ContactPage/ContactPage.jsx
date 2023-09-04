@@ -9,7 +9,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <div>
+      <div className={style.div}>
         <h1 className={style.title}>Phonebook</h1>
       </div>
       <Form />

@@ -9,7 +9,7 @@ const Register = () => {
   }, []);
 
   return (
-    <div>
+    <div className={style.div}>
       <h1 className={style.title}>
         Registration <IoPersonAddOutline />
       </h1>
