@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { selectContacts } from 'redux/selector';
-import { nanoid } from '@reduxjs/toolkit';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Form = () => {
@@ -69,13 +68,13 @@ const Form = () => {
         ADD CONTACT
       </button>
       <Toaster
-          position="top-right"
-          toastOptions={{
+        position="top-right"
+        toastOptions={{
           duration: 1500,
           style: {
-          borderRadius: '20px',
-          padding: '16px',
-          color: '#b83b5e',
+            borderRadius: '20px',
+            padding: '16px',
+            color: '#b83b5e',
           },
         }}
       />
