@@ -1,17 +1,17 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import React from 'react';
 import FormRegister from 'components/FormRegist/FormRegist';
 import style from '../ContactPage/Contact.module.css';
 
 const Register = () => {
+  React.useEffect(() => {
+    document.title = 'Registration';
+  }, []);
+
   return (
-    <HelmetProvider>
-      <div>
-        <Helmet>
-          <title className={style.title}>Registration</title>
-        </Helmet>
-        <FormRegister />
-      </div>
-    </HelmetProvider>
+    <div>
+      <h1 className={style.title}>Registration</h1>
+      <FormRegister />
+    </div>
   );
 };
 

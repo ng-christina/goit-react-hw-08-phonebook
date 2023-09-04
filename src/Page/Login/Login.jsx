@@ -1,17 +1,17 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import React from 'react';
 import LoginF from 'components/LoginF/LoginF';
 import style from '../ContactPage/Contact.module.css';
 
 const Login = () => {
+  React.useEffect(() => {
+    document.title = 'Login';
+  }, []);
+
   return (
-    <HelmetProvider>
-      <div>
-        <Helmet>
-          <title className={style.title}>Login</title>
-        </Helmet>
-        <LoginF />
-      </div>
-    </HelmetProvider>
+    <div>
+      <h1 className={style.title}>Login</h1>
+      <LoginF />
+    </div>
   );
 };
 
