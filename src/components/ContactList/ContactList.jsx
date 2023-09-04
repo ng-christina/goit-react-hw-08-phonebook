@@ -1,31 +1,36 @@
+import { useDispatch, useSelector } from 'react-redux';
 import style from './ContactList.module.css';
 import ContactItem from 'components/ContactItem/ContactItem';
-import { useSelector } from 'react-redux';
-import {
-  selectContacts,
-  selectContactsFiltered,
-  selectError,
-  selectIsLoading,
-} from 'redux/selector';
+import Loader from 'components/Loader/Loader';
+import { fetchContacts } from 'redux/operations';
+import { useEffect } from 'react';
+
+import { selectFilter, selectError, selectIsLoading } from 'redux/selector';
 
 const ContactList = () => {
-  const filteredContacts = useSelector(selectContactsFiltered);
-  const contacts = useSelector(selectContacts);
+  const filteredContacts = useSelector(selectFilter);
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
-    <ul className={style.conList}>
+    <div>
       {isLoading && !error ? (
-        <p className={style.p}>Loading...</p>
-      ) : contacts.length === 0 && !error ? (
+        <Loader />
+      ) : filteredContacts.length === 0 && !error ? (
         <p className={style.p}>Add your first number in phonebook</p>
       ) : (
-        filteredContacts.map(({ id, name, number }) => (
-          <ContactItem key={id} contact={{ id, name, number }} />
-        ))
+        <ul className={style.conList}>
+          {filteredContacts.map(({ id, name, number }) => (
+            <ContactItem key={id} contact={{ id, name, number }} />
+          ))}
+        </ul>
       )}
-    </ul>
+    </div>
   );
 };
 
