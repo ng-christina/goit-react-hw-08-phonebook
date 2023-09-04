@@ -6,7 +6,6 @@ import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 
 import {
-  selectFilter,
   selectError,
   selectIsLoading,
   selectContactsFiltered,
