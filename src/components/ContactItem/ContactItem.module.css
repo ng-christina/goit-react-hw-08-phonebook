@@ -3,20 +3,19 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  padding: 5px 8px;
 }
 .itemName {
   font-weight: 600;
-  margin-left: auto;
 }
 
 .itemNumber {
   margin-left: auto;
 }
 
-.btnDelete {
+.btn {
   font-size: 15px;
   margin-left: auto;
-  padding: 5px 8px;
 
   background: transparent;
   border: none;
@@ -24,6 +23,12 @@
   transition: transform 0.9s ease-in-out;
 }
 
-.btnDelete:hover {
-  transform: scale(1.2) rotate(360deg);
+.btn:hover {
+  transform: scale(1.5) rotate(360deg);
+}
+
+.divv {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
 }

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact, editContact } from 'redux/operations';
 import { BsTrash3 } from 'react-icons/bs';
+import { CiEdit } from 'react-icons/ci';
 import { Modal, Input, Button, message, Popconfirm } from 'antd';
 
 const ContactItem = ({ contact }) => {
@@ -14,11 +15,7 @@ const ContactItem = ({ contact }) => {
 
   const confirm = e => {
     handleDelete(e.target.value);
-    message.success('Click on Yes');
-  };
-
-  const cancel = e => {
-    message.error('Click on No');
+    message.success('contact deleted');
   };
 
   const handleDelete = () => {
@@ -52,20 +49,24 @@ const ContactItem = ({ contact }) => {
       <span className={style.itemNumber} href={`tel:${contact.number}`}>
         {contact.number}
       </span>
-      <button className={style.btnDelete} onClick={handleDelete}>
-        <BsTrash3 />
-      </button>
-      <button className={style.btnDelete} onClick={handleEdit}>
-        ooo
-      </button>
-      <Popconfirm
-        title="Delete the contact"
-        description="Are you sure to delete this contact?"
-        onConfirm={confirm}
-        onCancel={cancel}
-        okText="Yes"
-        cancelText="No"
-      />
+
+      <div className={style.divv}>
+        <button className={style.btn} onClick={handleEdit}>
+          <CiEdit />
+        </button>
+
+        <Popconfirm
+          title="Delete the contact"
+          description="Are you sure to delete this contact?"
+          onConfirm={confirm}
+          okText="Yes"
+          cancelText="No"
+        >
+          <button className={style.btn}>
+            <BsTrash3 />
+          </button>
+        </Popconfirm>
+      </div>
       <Modal
         open={showModal}
         onCancel={handleCancel}
@@ -88,7 +89,7 @@ const ContactItem = ({ contact }) => {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
-          
+
           <label>New Number:</label>
           <Input
             type="text"
